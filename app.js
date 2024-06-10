@@ -5,7 +5,6 @@ console.log(buttons);
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log("clicked button");
         playGame(button.getAttribute('id'));
     });
 });
@@ -21,9 +20,9 @@ console.log(getComputerChoice());
 
 
 function playRound(playerSelection, computerSelection){
-    //playerSelection = playerSelection.toLowerCase();
-    //computerSelection = computerSelection.toLowerCase();
-
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection= computerSelection.toLowerCase();
+    
     if(playerSelection === computerSelection){
         return "It's a draw";
     }
