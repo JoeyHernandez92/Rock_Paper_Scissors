@@ -1,11 +1,14 @@
 const choices = ['Rock','Paper','Scissors'];
+document.addEventListener('DOMContentLoaded', () =>{
 const buttons = document.querySelectorAll("button");
+console.log(buttons);
 
-buttons.forEach(button => {
+buttons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log("clicked button");
-        playGame(button.getAttribute('choice'));
+        playGame(button.getAttribute('id'));
     });
+});
 });
 
 
@@ -18,8 +21,8 @@ console.log(getComputerChoice());
 
 
 function playRound(playerSelection, computerSelection){
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    //playerSelection = playerSelection.toLowerCase();
+    //computerSelection = computerSelection.toLowerCase();
 
     if(playerSelection === computerSelection){
         return "It's a draw";
@@ -35,14 +38,10 @@ function playRound(playerSelection, computerSelection){
 } 
 
 function playGame(playerSelection){
-    for(let i = 0; i < 5; i++){
-        //const playerSelection = prompt("Please enter Rock,Paper,or Scissors");
         const computerSelection = getComputerChoice();
         console.log("Computer picked " + computerSelection);
         console.log("You picked " + playerSelection);
         console.log(playRound(playerSelection, computerSelection));
-    }
-    console.log("Thanks for playing");
+        console.log("Thanks for playing");
 }
-
-playGame();
+console.log(getComputerChoice());
